@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using FoodSaleApiService.Entities;
-using FoodSaleApiService.Models.DALs;
 
 namespace FoodSaleApiService.Repositories.Interfaces
 {
