@@ -28,6 +28,8 @@ namespace FoodSaleApiService.Controllers
         [HttpPost]
         public async Task<ActionResult> AddFoodSale(FoodSale foodSale)
         {
+            int maxId = await foodSaleRepository.GetMaxId();
+            foodSale.Id = maxId + 1;
             await foodSaleRepository.Add(foodSale);
             return Ok();
         }

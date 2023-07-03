@@ -26,6 +26,11 @@ namespace FoodSaleApiService.Repositories
         {
             return await _dbContext.Set<FoodSale>().ToListAsync();
         }
+        public async Task<int> GetMaxId()
+        {
+            int? maxId = await _dbContext.FoodSale.MaxAsync(f => (int?)f.Id);
+            return maxId ?? 0; 
+        }
 
         public async Task Add(FoodSale foodSale)
         {
